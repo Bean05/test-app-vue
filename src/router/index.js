@@ -6,7 +6,7 @@ const routes = [
     path: '/',
     name: 'home',
     meta: { layout: 'main' },
-    component: HomeView
+    component: HomeView,
   },
   {
     path: '/login',
@@ -18,13 +18,13 @@ const routes = [
     path: '/profile',
     name: 'profile',
     meta: { layout: 'main' },
-    component: () => import('../views/Profile.vue')
+    component: () => import('../views/Profile.vue'),
   },
   {
     path: '/ticket',
     name: 'ticket',
     meta: { layout: 'main' },
-    component: () => import('../views/Ticket.vue')
+    component: () => import('../views/Ticket.vue'),
   }
 ]
 

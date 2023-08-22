@@ -21,7 +21,6 @@ export default {
       ticket: {
         title: '',
         body: '',
-
       }
     }
   },

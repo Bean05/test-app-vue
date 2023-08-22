@@ -8,7 +8,6 @@ import TicketForm from '@/components/app/TicketForm'
 import TicketList from '@/components/app/TicketList'
 import axios from 'axios'
 
-
 export default {
   components: {
     TicketForm, TicketList
@@ -35,5 +34,4 @@ export default {
     this.fetchTickets();
   }
 }
-
 </script>

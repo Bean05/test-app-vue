@@ -1,31 +1,33 @@
 <template>
-  <div v-for="user in users">
-    <h5 class="card-title">Все пользователи</h5>
-    <ul class="list-group">
-      <li class="list-group-item">{{ user.name }}</li>
-    </ul>
-  </div>
+  <UserInfo :user="user" :cities="cities"/>
 </template>
 
 <script>
+import UserInfo from '@/components/app/UserInfo.vue'
+import axios from 'axios';
+
 export default {
+  components: {
+    UserInfo
+},
   data() {
     return {
-      users: []
+      user:{},
+      cities:['Moscow', 'Orenburg', 'Kazan', 'Vladivostok', 'Novosibirsk']
     }
   },
   methods: {
-    async fetchUsers() {
+    async fetchUser() {
       try {
-        const response = await axios.get('https://jsonplaceholder.typicode.com/users');
-        this.users = response.data
+        const response = await axios.get('https://jsonplaceholder.org/users/1');
+        this.user = response.data
       } catch (err) {
         alert('Упс, что-то пошло не так!')
       }
     }
   },
   mounted() {
-    this.fetchUsers();
+    this.fetchUser();
   }
 }
 </script>
